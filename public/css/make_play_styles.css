@@ -1,0 +1,10 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    row-gap: 1.5vw;
+}
+
+form * {
+    width: fit-content;
+}
