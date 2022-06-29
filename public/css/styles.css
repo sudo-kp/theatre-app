@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html, body, h2, h3, h5, p {
+    margin: 0;
+    padding: 0;
+}
+
+title {
+    font-family: Comfortaa, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #FBF9F7;
+}
+
+header {
+    background-color: #FBDC33;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    padding: 1vw 8vw;
+}
+
+header div {
+    height: 100%;
+}
+
+#label {
+    width: 34%;
+}
+
+#logo img {
+    width: 8vw;
+}
+
+#cart img {
+    width: 2.2vw;
+}
+
+header p {
+    font-family: Comfortaa, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4vw;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #011638;
+}
+
+nav {
+    height: 100%;
+}
+
+header nav a {
+    font-family: 'Comfortaa', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3vw;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #011638;
+    margin: 1vw;
+}
+
+.selected-menu-item {
+    text-decoration: underline 2px #011638;
+}
+
+#info {
+    margin-bottom: 0.8vw;
+}
+
+footer {
+    background-color: #151416;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FBF9F7;
+}
+
+footer ion-icon {
+    font-size: 3.2vw;
+    margin: 0 0.4vw;
+    color: #FBF9F7;
+}
+
+#footer-image {
+    width: 100%;
+}
+
+#footer-image img {
+    width: 100%;
+}
+
+#footer-image768, #footer-image992, #footer-image575 {
+    display: none;
+}
+
+#footer-logo {
+    width: 10vw;
+}
+
+#footer-nav {
+    margin: 1vw 0;
+}
+
+#footer-nav a {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    margin: 0 0.8vw;
+    color: inherit;
+}
+
+footer p {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.6vw;
+    text-align: center;
+}
+
+#socials {
+    margin: 1.1vw 0 1.4vw 0;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('font/fonts/icomoon.eot?7t5p4k');
+    src:  url('font/fonts/icomoon.eot?7t5p4k#iefix') format('embedded-opentype'),
+    url('font/fonts/icomoon.ttf?7t5p4k') format('truetype'),
+    url('font/fonts/icomoon.woff?7t5p4k') format('woff'),
+    url('font/fonts/icomoon.svg?7t5p4k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon', sans-serif !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+    content: "\1f49c";
+    font-size: 102px;
+    font-weight: 200;
+}
+
+.dropbtn {
+    display: none;
+    background-color: transparent;
+    width: 7vw;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    background-color: #71697A;
+    padding: 1vw;
+    display: none;
+    width: 70vw;
+    position: absolute;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #FBF9F7;
+    background-color: #71697A;
+    padding: 1.9vw 1.5vw;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 5vw;
+    font-weight: 200;
+    text-align: center;
+    display: block;
+}
+
+
+
+a.selected-menu-item-mob {
+    background-color: #FBDC33;
+    color: #FBF9F7;
+}
+
+@media screen and (max-width: 1500px) {
+    #label p {
+        font-size: 23px;
+    }
+
+    #nav a {
+        font-size: 22px;
+    }
+
+    #cart img{
+        width: 2.5vw;
+    }
+
+    #logo img {
+        width: 9vw;
+    }
+
+    #label {
+        width: 25%;
+    }
+
+    footer ion-icon {
+        font-size: 3.7vw;
+    }
+
+    #footer-nav a {
+        font-size: 2vw;
+    }
+
+    footer #info p {
+        font-size: 2.1vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    #nav {
+        display: none;
+    }
+
+    .dropbtn {
+        display: block;
+        width: 3vw;
+    }
+
+    #label {
+        width: 47%;
+    }
+
+    .show {display:block;}
+
+    #logo img {
+        width: 12vw;
+    }
+
+    #cart img {
+        width: 3.7vw;
+    }
+
+    footer ion-icon {
+        font-size: 4.5vw;
+    }
+
+    #footer-nav a {
+        font-size: 2.3vw;
+    }
+
+    footer #info p {
+        font-size: 2.3vw;
+    }
+
+    #footer-logo {
+        width: 13vw;
+    }
+
+    #footer-nav {
+        margin: 1.5vw 0;
+    }
+
+    #socials {
+        margin: 1.4vw 0 1.8vw 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #logo img {
+        width: 15vw;
+    }
+
+    #cart img {
+        width: 4.2vw;
+    }
+
+    .dropbtn {
+        width: 3.8vw;
+    }
+
+    footer ion-icon {
+        font-size: 6.5vw;
+        margin: 0 1.5vw;
+    }
+
+    #footer-nav a {
+        font-size: 3vw;
+    }
+
+    footer #info p {
+        font-size: 2.7vw;
+    }
+
+    #footer-logo {
+        width: 15vw;
+    }
+
+    #footer-image992 {
+        display: block;
+    }
+
+    #footer-image-big {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #label {
+        width: 45%;
+    }
+
+    #label p {
+        font-size: 3vw;
+    }
+
+    #logo img {
+        width: 19vw;
+    }
+
+    #cart img {
+        width: 5.2vw;
+    }
+
+    .dropbtn {
+        width: 5vw;
+    }
+
+    #footer-image768 {
+        display: block;
+    }
+
+    #footer-image992 {
+        display: none;
+    }
+
+    #footer-nav {
+        margin: 3vw 0 2vw;
+    }
+
+    #socials {
+        margin: 2.2vw 0 4vw 0;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #label {
+        display: none;
+    }
+
+    #logo, #cart {
+        margin-top: 1.2vw;
+    }
+
+    #logo img {
+        width: 33vw;
+    }
+
+    #cart img {
+        width: 9vw;
+    }
+
+    .dropbtn {
+        width: 9vw;
+    }
+
+    #footer-image575 {
+        display: block;
+    }
+
+    #footer-image768 {
+        display: none;
+    }
+
+    #footer-logo {
+        display: none;
+    }
+
+    footer ion-icon {
+        font-size: 9vw;
+        margin: 0 1.8vw;
+    }
+
+    #footer-nav a {
+        font-size: 4.5vw;
+    }
+
+    footer #info p {
+        font-size: 4.5vw;
+    }
+
+    footer ion-icon {
+        font-size: 10vw;
+        margin: 0 2vw;
+    }
+
+    #footer-nav {
+        margin: 9vw 0 5vw;
+    }
+
+    #footer-nav a {
+        font-size: 4.8vw;
+    }
+}
+

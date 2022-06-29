@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class PerfomanceController extends Controller
 {
+
     public function add(Request $request): Factory|View|Application
     {
         $play = new Play();
@@ -41,9 +42,11 @@ class PerfomanceController extends Controller
         }
         else {
             $perfomances = Perfomance::whereYear('date', '=', explode('-', $month)[0])
-            ->whereMonth('date', '=', explode('-', $month)[1])->get();
+            ->whereMonth('date', '=', explode('-', $month)[1])->
+                whereDay('date', '>=', date('d'))->get();
         }
-        return view('container', ['perfomances'=>$perfomances, 'current_month'=>date('Y-m')]);
+        return view('container', ['perfomances'=>$perfomances, 'current_month'=>date('Y-m'),
+            'requested_month'=>$month, 'current_day'=>date('d'), 'requested_day'=>$request->input('day')]);
     }
 
     public function get_perfomance_info($id): Factory|View|Application
@@ -53,6 +56,12 @@ class PerfomanceController extends Controller
         return view('informational', ['photo_path'=>$perfomance->play->photo_path,
             'title'=>$perfomance->play->title, 'info'=>$info,
             'date'=>$perfomance->date, 'time'=>$perfomance->time,
-            'place'=>$perfomance->place]);
+            'place'=>$perfomance->place, 'actors'=>$perfomance->play->actors, 'id'=>$perfomance->id,
+            'price'=>$perfomance->price]);
+    }
+
+    public function get_today_perfomances() {
+        $perfomances = Perfomance::where('date', '=', date('Y-m-d'))->get();
+        return view('index', ['perfomances'=>$perfomances]);
     }
 }

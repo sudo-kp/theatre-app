@@ -1,0 +1,519 @@
+
+
+#tiles-container {
+    border: 15vw solid #FBF9F7;
+    border-image-source: url("/images/zigzag.svg");
+    border-image-repeat: repeat;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-image-slice: 224;
+    background-color: #71697A;
+    width: 100%;
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#tiles {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    column-gap: 15px;
+    row-gap: 36px;
+    place-items: center;
+    place-content: center;
+}
+
+#tiles div {
+    width: 100%;
+    font-family: "Comfortaa", sans-serif;
+    color: #FBF9F7;
+    font-size: 20px;
+    text-align: center;
+}
+
+#tiles img {
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#tiles-container h2 {
+    font-family: "Comfortaa", sans-serif;
+    color: #FBF9F7;
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+#founder-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#founder-container span {
+    width: 12em;
+    margin-left: -8vw;
+    margin-bottom: 8vw;
+    font-size: 2.5vw;
+    font-family: "Comfortaa", sans-serif;
+    color: #011638;
+
+}
+
+#founder-container img {
+    width: 40%;
+}
+
+
+#play-heading {
+    font-family: "Comfortaa", sans-serif;
+    color: #011638;
+    font-size: 64px;
+    font-weight: 400;
+    text-align: center;
+    margin: 5vw 0 1vw 0;
+}
+
+#play-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#play-photo-container img {
+    width: 90%;
+    margin-bottom: 1vw;
+}
+
+#poster-link {
+    font-family: Comfortaa, sans-serif;
+    color: #011638;
+    font-size: 2.5vw;
+    text-align: center;
+    border: solid #011638 2px;
+    padding: 20px;
+}
+
+#poster-link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5vw 0;
+}
+
+.slideshow-container {
+    position: relative;
+    aspect-ratio: 975/492;
+    width: 70%;
+    display: grid;
+    background-color: rgba(251, 220, 51, 40%);
+    border: 7px solid #FBDC33;
+    border-radius: 1%;
+    margin: 3vw auto 4vw;
+}
+
+.slideshow-container:hover .prev, .slideshow-container:hover .next {
+    display: block;
+}
+
+/* Hide the images by default */
+.slide {
+    display: none;
+    font-family: "Comfortaa", sans-serif;
+    color: #FBF9F7;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 975/492;
+    z-index: -1;
+    display: block;
+    filter: brightness(40%);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    align-self: center;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(251,220,51,0.8);
+}
+
+/* Caption text */
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+}
+
+.slider-info-box {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 3vw 7vw 3vw 7vw;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    gap: 2vw;
+}
+
+.play-name {
+    font-size: 36px;
+    font-weight: 100;
+}
+
+.play-description {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.tickets-button {
+    display: block;
+    font-size: 28px;
+    font-family: "Comfortaa", sans-serif;
+    color: #FBF9F7;
+    border: 1px solid #FBF9F7;
+    padding: 0.6vw 1vw;
+}
+
+.dot {
+    cursor: pointer;
+    height: 3vw;
+    width: 3vw;
+    margin: 0 2px;
+    background-color: #FBDC33;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+.active {
+    background-color: #71697A;
+}
+
+.slideshow-container-mobile {
+    display: none;
+    margin: 2vw auto 3vw;
+    width: 95%;
+}
+
+.slide-mobile {
+    display: none;
+    font-family: "Comfortaa", sans-serif;
+    color: #011638;
+    padding: 5vw 0;
+    text-align: center;
+    height: max-content;
+}
+
+.slide-mobile img {
+    width: 100%;
+    aspect-ratio: 975/492;
+}
+
+.slide-mobile h2 {
+    margin: 2.5vw 0 1vw;
+}
+.play-name-mobile {
+    font-weight: 200;
+    font-size: 6vw;
+}
+
+.play-description-mobile {
+    font-weight: 200;
+    font-size: 5vw;
+    margin-top: 3vw;
+}
+
+#dots {
+    display: none;
+    margin-bottom: 2vw;
+}
+
+
+
+#history-container {
+    width: 65%;
+    /*background-image: url("images/stripe.svg");*/
+    padding: 2vw 2vw;
+    border: 2px solid #011638;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+#history-container > img {
+    width: 100%;
+}
+
+#history-container div {
+    width: 100%;
+    margin: 1.5vw 0;
+    font-family: "Comfortaa", sans-serif;
+    background-color: #FBF9F7;
+    z-index: 2;
+    font-size: 1.5vw;
+}
+
+#history-container h2 {
+    font-family: "Comfortaa", sans-serif;
+    margin: 1vw 0;
+    font-size: 2vw;
+}
+
+
+img#scrb {
+    position: absolute;
+    display: block;
+    width: 40%;
+    top: 5%;
+    left: -30%;
+}
+
+img#scrb2 {
+    position: absolute;
+    display: block;
+    width: 40%;
+    top: -8%;
+    right: -20%;
+}
+
+@media screen and (max-width: 1200px) {
+    .slideshow-container {
+        width: 85%;
+    }
+
+    .play-description, .play-name, .tickets-button {
+        left: 8%;
+    }
+
+    #history-container {
+        width: 75%;
+    }
+
+    #history-container div {
+        font-size: 1.8vw;
+    }
+
+    #history-container h2 {
+        font-size: 2.3vw;
+    }
+
+    img#scrb, img#scrb2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #tiles {
+        grid-template-columns: 300px 300px;
+    }
+
+    #tiles-container {
+        border-bottom-width: 20vw;
+        border-top-width: 20vw;
+    }
+
+    #founder-container span {
+        font-size: 2.8vw;
+    }
+
+    #history-container {
+        width: 90%;
+    }
+
+    #history-container h2 {
+        font-size: 3vw;
+    }
+
+    #history-container div {
+        font-size: 2.5vw;
+    }
+
+    #scrb, #scrb2 {
+        width: 10%;
+    }
+
+    div#tiles div.item {
+        font-size: 3.5vw;
+    }
+
+    #poster-link {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #tiles {
+        grid-template-columns: 450px;
+        column-gap: 0;
+    }
+
+    .tickets-button {
+        display: none;
+    }
+
+    .slider-info-box {
+        padding-bottom: 5vw;
+    }
+
+    #founder-container {
+        flex-direction: column;
+    }
+
+    #founder-container img {
+        order: 1;
+        width: 60%;
+    }
+
+    #founder-container span {
+        margin: 7vw 0 3vw;
+        width: fit-content;
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    #history-container h2 {
+        font-size: 4vw;
+    }
+
+    #history-container div {
+        font-size: 3.8vw;
+    }
+
+    #scrb, #scrb2 {
+        width: 5%;
+    }
+
+    #play-photo-container img {
+        margin-bottom: 3vw;
+    }
+
+    div#tiles div.item {
+        font-size: 4vw;
+    }
+
+    #poster-link {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    h2 {
+        padding: 2vw;
+    }
+
+    #tiles-container h2 {
+        font-size: 10vw;
+        text-align: center;
+    }
+
+    #play-heading {
+        font-size: 10vw;
+    }
+
+    .slideshow-container-mobile, #dots {
+        display: block;
+    }
+
+    .slideshow-container-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slideshow-container {
+        display: none;
+    }
+
+    #tiles {
+        grid-template-columns: 85vw;
+        column-gap: 0;
+    }
+
+    #tiles-container {
+        border-bottom-width: 25vw;
+        border-top-width: 25vw;
+    }
+
+    #founder-container img {
+        width: 80%;
+    }
+
+    #founder-container span {
+        margin: 7vw 0 3vw;
+        width: fit-content;
+        font-size: 7vw;
+        text-align: center;
+    }
+
+    #history-container h2 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    #history-container {
+        width: 97%;
+    }
+
+    #history-container div {
+        font-size: 5vw;
+        margin: 5vw 0;
+    }
+
+    img#scrb, img#scrb2 {
+        display: none;
+    }
+
+    div#tiles div.item {
+        font-size: 5vw;
+    }
+
+    #poster-link {
+        font-size: 6vw;
+    }
+
+    .slide-mobile h2 {
+        height: 2em;
+    }
+}
+
+@media screen and (max-device-width: 399px) {
+
+}

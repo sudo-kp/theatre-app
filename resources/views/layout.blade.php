@@ -11,7 +11,7 @@
 <header>
     <img class="dropbtn" onclick="myFunction()" src="images/menu-bar.svg">
     <div id="logo">
-        <img src="images/logo.svg" alt="logo">
+        <img src="/images/logo.svg" alt="logo">
     </div>
     <div id="label">
         <p>ТЕАТР СУЧАСНОГО МИСТЕЦТВА ДАХ</p>
@@ -19,14 +19,11 @@
     </div>
     <div id="nav">
         <nav>
-            <a href="index.html" class="selected-menu-item">ГОЛОВНА</a>
+            <a href="/" class="selected-menu-item">ГОЛОВНА</a>
             <a href="/con">АФІША</a>
-            <a href="#">АКТОРИ</a>
+            <a href="/actors">АКТОРИ</a>
             <a href="#">КОНТАКТИ</a>
         </nav>
-    </div>
-    <div id="cart">
-        <img src="images/cart.svg" alt="cart">
     </div>
 </header>
 <div id="myDropdown" class="dropdown-content">
@@ -39,13 +36,13 @@
 
 <footer>
     <div id="footer-image">
-        <img id="footer-image-big" src="images/footer.svg">
-        <img id="footer-image992" src="images/footer992.svg">
-        <img id="footer-image768" src="images/footer768.svg">
-        <img id="footer-image575" src="images/footer575.svg">
+        <img id="footer-image-big" src="/images/footer.svg">
+        <img id="footer-image992" src="/images/footer992.svg">
+        <img id="footer-image768" src="/images/footer768.svg">
+        <img id="footer-image575" src="/images/footer575.svg">
     </div>
     <div id="footer-logo-container">
-        <img id="footer-logo" src="images/footer-logo.svg">
+        <img id="footer-logo" src="/images/footer-logo.svg">
     </div>
     <div id="footer-nav">
         <a href="#">Лінки</a>

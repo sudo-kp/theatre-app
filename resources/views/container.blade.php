@@ -11,15 +11,20 @@
     <div id="date-selector">
         <h1>АФІША</h1>
 
-        <form method="get" action="">
+        <form method="get" action="" id="date-form">
             <div id="month-container">
-                <input type="month" class="selected-month" name="month" min="{{$current_month}}">
+                <input type="month" class="selected-month" name="month" min="{{$current_month}}" value="{{$requested_month}}" onchange="document.getElementById('date-form').submit()" >
             </div>
             <label for="day">День</label><br>
-            <input type="number" id="day" min="1" max="31" name="day" placeholder="День"  size="2">
+            <input type="number" id="day"
+                   @if($current_month==$requested_month)
+                       min="{{$current_day}}"
+                   @else
+                       min="1"
+                   @endif
+                   value="{{$requested_day}}" max="31" name="day"  size="2">
             <input type="submit" value="Submit" hidden>
         </form>
-        <div id="weekday">Середа</div>
     </div>
 
     <div id="show-container">
@@ -29,10 +34,10 @@
             @foreach($perfomances as $perfomance)
                 <div class="show-box">
                     <div class="left-box">
-                        <h3 class="show-name">{{$perfomance->play->title}}</h3>
+                        <h3 class="show-name">{{$perfomance->play->title}} {{$perfomance->play->subtitle}}</h3>
                         <div class="show-coordinates">
-                            <h5>{{$perfomance->date}}</h5>
-                            <h5>{{$perfomance->time}}</h5>
+                            <h5>{{explode('-', $perfomance->date)[2]}}.{{explode('-', $perfomance->date)[1]}}</h5>
+                            <h5>{{explode(':', $perfomance->time)[0]}}:{{explode(':', $perfomance->time)[1]}}</h5>
                             <h5>{{$perfomance->place}}</h5>
                         </div>
                         <div class="show-short-description">
@@ -61,7 +66,7 @@
             <div class="show-box">
                 <h3 class="show-name">{{$perfomance->title}}</h3>
                 <div class="show-coordinates">
-                    <h5>{{$perfomance->time}}</h5>
+                    <h5>{{explode(':', $perfomance->time)[0]}}:{{explode(':', $perfomance->time)[1]}}</h5>
                     <h5>{{$perfomance->place}}</h5>
                 </div>
                 <div class="show-short-description">

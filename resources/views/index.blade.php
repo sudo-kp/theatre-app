@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/landing.css">
+    <link rel="stylesheet" href="css/landing.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ТЕАТР ДАХ</title>
@@ -21,14 +21,11 @@
     </div>
     <div id="nav">
         <nav>
-            <a href="index.html" class="selected-menu-item">ГОЛОВНА</a>
+            <a href="" class="selected-menu-item">ГОЛОВНА</a>
             <a href="/con">АФІША</a>
-            <a href="#">АКТОРИ</a>
+            <a href="/actors">АКТОРИ</a>
             <a href="#">КОНТАКТИ</a>
         </nav>
-    </div>
-    <div id="cart">
-        <img src="images/cart.svg" alt="cart">
     </div>
 </header>
 
@@ -41,32 +38,17 @@
 </div>
 
 <div class="slideshow-container">
-    <div class="slide fade">
-        <img src="images/show1.png">
-        <div class="slider-info-box">
-            <h2 class="play-name">«Стус: Перехожий»</h2>
-            <h5 class="play-description">Камерна опера</h5>
-            <a class="tickets-button" href="informational.html">Квитки</a>
+    @foreach($perfomances as $perfomance)
+        <div class="slide fade">
+            <img src="{{$perfomance->play->photo_path}}">
+            <div class="slider-info-box">
+                <h2 class="play-name">{{$perfomance->play->title}}</h2>
+                <h5 class="play-description">{{$perfomance->play->subtitle}}</h5>
+                <a class="tickets-button" href="/con/{{$perfomance->id}}">Квитки</a>
+            </div>
         </div>
-    </div>
+    @endforeach
 
-    <div class="slide fade">
-        <img src="images/zaratustra.png">
-        <div class="slider-info-box">
-            <h2 class="play-name">ПРО ЩО КАЗАВ ЗАРАТУСТРА</h2>
-            <h5 class="play-description">Театральні уроки</h5>
-            <a class="tickets-button" href="#">Квитки</a>
-        </div>
-    </div>
-
-    <div class="slide fade">
-        <img src="images/show3.png">
-        <div class="slider-info-box">
-            <h2 class="play-name">Сповідь або «Крові прагну»</h2>
-            <h5 class="play-description">Моновистава</h5>
-            <a class="tickets-button" href="#">Квитки</a>
-        </div>
-    </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -74,30 +56,20 @@
 
 <div class="slideshow-container-mobile">
 
-    <div class="slide-mobile fade">
-        <img src="images/zaratustra.png">
-        <h2 class="play-name-mobile">ПРО ЩО КАЗАВ ЗАРАТУСТРА</h2>
-        <h5 class="play-description-mobile">Театральні уроки</h5>
-    </div>
-
-    <div class="slide-mobile fade">
-        <img src="images/show1.png">
-        <h2 class="play-name-mobile">«Стус: Перехожий»</h2>
-        <h5 class="play-description-mobile">Камерна опера</h5>
-    </div>
-
-    <div class="slide-mobile fade">
-        <img src="images/show3.png">
-        <h2 class="play-name-mobile">Сповідь або «Крові прагну»</h2>
-        <h5 class="play-description-mobile">Моновистава</h5>
-    </div>
+    @foreach($perfomances as $perfomance)
+        <div class="slide-mobile fade">
+            <img src="{{$perfomance->play->photo_path}}">
+            <h2 class="play-name-mobile">{{$perfomance->play->title}}</h2>
+            <h5 class="play-description-mobile">{{$perfomance->play->subtitle}}</h5>
+        </div>
+    @endforeach
 
 </div>
 
 <div id="dots" style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+    @for($i=1; $i <= count($perfomances); $i++)
+        <span class="dot" onclick="currentSlide({{$i}})"></span>
+    @endfor
 </div>
 
 <div id="tiles-container">

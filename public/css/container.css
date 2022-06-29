@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400');
+
+a {
+    color: #011638;
+}
+
+a:visited {
+    color: #011638;
+}
+
+#show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 4vw;
+}
+
+#show-container > h3 {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 40px;
+    font-weight: 200;
+    color: #011638;
+    margin: 5vw 0 7vw;
+}
+
+.show-box {
+    border: 70px solid;
+    border-top-width: 5px;
+    border-bottom-width: 7px;
+    border-image-source: url("/images/frame1.svg");
+    border-image-repeat: stretch;
+    border-image-slice: 5 88 6;
+    width: 97%;
+    box-sizing: border-box;
+    aspect-ratio: 1319/500;
+    padding: 1vw 3vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.left-box h3, .left-box .show-coordinates, .left-box .show-short-description {
+    width: 90%;
+}
+
+.show-name {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 1vw;
+}
+
+.show-coordinates {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 1vw;
+}
+
+.show-coordinates h5 {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 28px;
+    font-weight: 200;
+    color: #011638;
+}
+
+.show-short-description p {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 24px;
+    color: #011638;
+}
+
+.shorter-description {
+    display: none;
+}
+
+.details-button {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 24px;
+    background-image: url("/images/frame5.svg");
+    color: #011638;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 0.6vw 2vw;
+    aspect-ratio: 275/83;
+    margin-left: 60%;
+    margin-top: 2vw;
+}
+
+.show-image {
+    display: block;
+    flex-shrink: 0;
+    width: 45%;
+}
+
+h1 {
+    border: 11px solid;
+    border-bottom-width: 15px;
+    border-top-width: 15px;
+    border-image-source: url("/images/frame2.svg");
+    border-image-repeat: stretch;
+    border-image-slice: 19 17;
+    width: fit-content;
+    padding: 0.5vw 1vw;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 60px;
+    font-weight: 200;
+    color: #011638;
+}
+
+#month-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2vw;
+    margin-bottom: 2vw;
+}
+
+#month-container label {
+    display: block;
+    width: fit-content;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.3vw;
+    color: #011638;
+    padding: 1.5vw 2.2vw;
+}
+
+.selected-month {
+    border: none;
+    display: block;
+    width: fit-content;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.3vw;
+    color: #011638;
+    padding: 2.3vw 1.8vw;
+    background-image: url("/images/frame4.svg");
+    background-size: cover;
+}
+
+#month-container input[type=month] {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    -moz-box-sizing: border-box;
+}
+
+#day {
+    width: 8%;
+    border: 15px solid;
+    padding: 0.9vw 1.8vw;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 2.5vw;
+    background-color: #FBF9F7;
+    border-image-source: url("/images/frame3.svg");
+    border-image-repeat: stretch;
+    border-image-slice: 15 15;
+    text-align: center;
+    color: #71697A;
+    font-weight: 600;
+    margin: 1vw 0;
+    -moz-box-sizing: content-box;
+}
+
+#day:focus {
+    outline: none;
+}
+
+label, #weekday {
+    font-family: "Comfortaa", sans-serif;
+    color: #011638;
+    font-size: 36px;
+}
+
+#date-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3vw;
+}
+
+#date-selector form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+}
+
+input[type="radio"]:checked+label{
+    background-image: url("/images/frame4.svg");
+    background-size: cover;
+}
+
+
+#vertical-show-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
+    margin: 7vw 0;
+}
+
+@media screen and (max-width: 1500px) {
+    .show-name {
+        font-size: 2.5vw;
+    }
+
+    .show-coordinates h5 {
+        font-size: 1.9vw;
+    }
+
+    .show-short-description p {
+        font-size: 1.4vw;
+    }
+
+    .show-box {
+        padding: 1vw 2.5vw;
+        width: 98%;
+    }
+
+    #month-container label {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .details-button {
+        font-size: 18px;
+    }
+
+    .show-box {
+        padding: 1vw 0.5vw;
+    }
+
+    .show-short-description p {
+        font-size: 1.7vw;
+    }
+
+    #month-container label {
+        font-size: 1.8vw;
+        padding: 1.8vw 2.2vw;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .show-box {
+        -moz-border-image: url("/images/frame1.svg") 3 75 3/ 0.35vw 9vw 0.45vw stretch;
+    }
+
+    .longer-description {
+        display: none;
+    }
+
+    #day {
+        font-size: 4vw;
+        width: 14%;
+    }
+
+    .show-name {
+        font-size: 2.7vw;
+    }
+
+    .details-button {
+        font-size: 2.1vw;
+    }
+
+    .shorter-description {
+        display: block;
+    }
+
+    .show-box {
+        padding: 0.9vw 0.3vw;
+    }
+
+    .left-box h3, .left-box .show-coordinates, .left-box .show-short-description {
+        width: 97%;
+    }
+
+    .show-coordinates h5 {
+        font-size: 2.3vw;
+    }
+
+    .show-short-description p {
+        font-size: 2.3vw;
+    }
+
+    .show-image {
+        width: 42%;
+    }
+
+    #month-container label {
+        font-size: 2vw;
+        padding: 1.8vw 2.2vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .show-box {
+        aspect-ratio: 1319/550;
+        padding: 0.9vw 0.1vw;
+        -moz-border-image: url("/images/frame1.svg") 2 83 3/ 0.35vw 13vw 0.5vw stretch;
+    }
+
+    .show-short-description p {
+        font-size: 2.3vw;
+    }
+    .show-name {
+        font-size: 3vw;
+    }
+
+    .show-coordinates {
+        gap: 10px;
+    }
+
+    .show-coordinates h5{
+        font-size: 2.3vw;
+    }
+
+    #month-container label {
+        font-size: 3vw;
+        padding: 2.5vw 2.2vw;
+    }
+
+    #day {
+        font-size: 5.5vw;
+        width: 17%;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    #vertical-show-container {
+        display: flex;
+    }
+
+    #show-container {
+        display: none;
+    }
+
+    .show-box {
+        border: 1vw solid;
+        border-top-width: 10vw;
+        border-bottom-width: 10vw;
+        border-image-source: url("/images/vertical-frame.svg");
+        border-image-slice: 60 5;
+        width: 96%;
+        box-sizing: border-box;
+        aspect-ratio: 575/800;
+        padding: 1vw 3vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .show-name, .show-short-description p, .show-coordinates, .show-image {
+        width: 100%;
+    }
+
+    .show-short-description p {
+        font-size: 5vw;
+    }
+
+    .show-short-description {
+        margin-bottom: 3vw;
+    }
+
+    .show-name {
+        font-size: 8vw;
+        margin-bottom: 3vw;
+    }
+
+    .show-coordinates h5{
+        background-color: #FBDC33;
+        font-size: 6vw;
+        margin-bottom: 2vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #month-container {
+        flex-direction: column;
+        gap: 2vw;
+        margin-bottom: 4vw;
+    }
+
+    #month-container label {
+        font-size: 5vw;
+        padding: 4vw 2.2vw;
+    }
+
+    #day {
+        font-size: 11vw;
+        width: 27%;
+        border-image: url("/images/frame3.svg") 15 / 3vw;
+        margin: 2.5vw 0;
+    }
+
+    h1 {
+        box-sizing: content-box;
+        font-size: 15vw;
+        padding: 1.2vw 2.2vw;
+        -webkit-border-image: url("/images/frame2.svg") 19 17/ 3vw 2.5vw;
+    }
+
+    label, #weekday {
+        font-size: 9vw;
+    }
+}

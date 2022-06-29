@@ -23,14 +23,20 @@
                     @endforeach
                 </p>
             @endforeach
+            <p>
+                Актори:
+                @foreach($actors as $actor)
+                    <a href="/actors/{{$actor->id}}">{{$actor->surname}} {{$actor->name}},</a>
+                @endforeach
+            </p>
         </div>
 
         <div id="ticket-info-box">
-            {{$date}} {{$time}}<br>
-            {{$place}}
+            {{explode('-', $date)[2]}}.{{explode('-', $date)[1]}} {{explode(':', $time)[0]}}:{{explode(':', $time)[1]}}<br>
+            {{$place}} {{$price}}грн
         </div>
 
-        <a href="#" id="buy-button">ПРИДБАТИ КВИТКИ</a>
+        <a href="/con/{{$id}}/buy-ticket" id="buy-button">ПРИДБАТИ КВИТКИ</a>
 
     </div>
 
